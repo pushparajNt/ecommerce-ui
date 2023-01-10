@@ -1,0 +1,21 @@
+mat-grid-tile
+{
+    border: 1px solid greenyellow;
+}
+.dropzone
+{
+    height: 150px;
+    min-width: 100px;
+    width: 300px;
+    border: 1px dashed black;
+    background-color: #eee;
+    border-radius: 6px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.text-wrapper
+{
+    margin-top: 23%;
+    margin-left: 7%;
+}

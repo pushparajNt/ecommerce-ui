@@ -86,4 +86,9 @@ export class AddNewProductComponent {
   return formData;
   }
 
+  removeImage(i)
+  {
+    this.product.productImages.splice(i,1);
+  }
+
 }
