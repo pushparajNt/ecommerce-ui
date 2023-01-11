@@ -36,6 +36,7 @@ export class AddNewProductComponent {
       (response:product)=>{
         console.log(response);
         productForm.reset();
+        this.product.productImages=[];
       },
       (error:HttpErrorResponse)=>
       {
@@ -90,5 +91,10 @@ export class AddNewProductComponent {
   {
     this.product.productImages.splice(i,1);
   }
+
+  fileDropped(fileHandle:FileHandle)
+   {
+this.product.productImages.push(fileHandle);
+   }
 
 }

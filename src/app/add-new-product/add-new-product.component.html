@@ -33,9 +33,14 @@
       <div class="col-6">
         <div>
 
-          <div class="dropzone">
+          <div class="dropzone" 
+
+          appDrag
+          (files)="fileDropped($event)"
+          >
             <div class="text-wrapper">
-              drag and drop your files or  <button (click)="selectFile.click()" mat-stroked-button color="primary" >browse</button> file
+              drag and drop your files or <button (click)="selectFile.click()" mat-stroked-button
+                color="primary">browse</button> file
             </div>
 
 
@@ -45,7 +50,8 @@
 
 
 
-          <input type="file" #selectFile name="" id="" value="select" multiple (change)="onFileSelected($event)" style="display: none;">
+          <input type="file" #selectFile name="" id="" value="select" multiple (change)="onFileSelected($event)"
+            style="display: none;">
         </div>
         <div>
           <mat-grid-list cols="4" rowHeight="2:1">
