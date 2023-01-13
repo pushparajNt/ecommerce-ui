@@ -33,16 +33,16 @@ export class UserAuthService {
   public isAdmin()
   {
     const roles:any[]=this.getRoles();
-    console.log("printing roles");
-    console.log(roles);
+    // console.log("printing roles");
+    // console.log(roles);
     return roles[0].roleName==='Admin';
   }
   
   public isUser()
   {
     const roles:any[]=this.getRoles();
-    console.log("printing roles");
-    console.log(roles);
+    // console.log("printing roles");
+    // console.log(roles);
     return roles[0].roleName==='User';
   }
 }
