@@ -19,4 +19,10 @@ export class ProductService {
     return this.httpClient.get<product[]>("http://localhost:9090/getAllProducts");
   }
 
+  public deleteProduct(productId:number)
+  {
+    console.log("printing product id inside service"+productId);
+      return this.httpClient.delete("http://localhost:9090/deleteProductDetails/"+productId);
+  }
+
 }

@@ -13,7 +13,7 @@ export class ShowProductDetailsComponent implements OnInit {
 
   productDetails:product[]=[];
 
-  displayedColumns: string[] = ['Product Id', 'Product Name', 'Product Description', 'Product Actual Price','Product Discounted Price'];
+  displayedColumns: string[] = ['Product Id', 'Product Name', 'Product Description', 'Product Actual Price','Product Discounted Price','Delete Product'];
 
   constructor(private productService:ProductService)
   {
@@ -36,6 +36,23 @@ export class ShowProductDetailsComponent implements OnInit {
         console.log(error);
       }
       );
+  }
+
+  deleteProductDetails(productId)
+  {
+    console.log("printing element");
+    console.log(productId);
+
+    this.productService.deleteProduct(productId).subscribe(
+      (response)=>{
+        console.log(response);
+        this.getAllProducts();
+
+      },
+      (error:HttpErrorResponse)=>{
+        console.log(error);
+      }
+    );
   }
 
 }
