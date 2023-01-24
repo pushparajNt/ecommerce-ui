@@ -32,6 +32,11 @@
         <td mat-cell *matCellDef="let element"> {{element.productDiscountPrice}} </td>
       </ng-container>
 
+      <ng-container matColumnDef="Images">
+        <th mat-header-cell *matHeaderCellDef>Images</th>
+        <td mat-cell *matCellDef="let element"> <button mat-raised-button (click)="showImages(element)">Show Images</button> </td>
+      </ng-container>
+
       <ng-container matColumnDef="Delete Product">
         <th mat-header-cell *matHeaderCellDef>Delete Product</th>
         <td mat-cell *matCellDef="let element"> <button mat-raised-button (click)="deleteProductDetails(element.productId)">delete</button> </td>
