@@ -6,6 +6,7 @@ import { ShowProductImagesDialogComponent } from '../show-product-images-dialog/
 import { product } from '../_model/product.model';
 import { ProductService } from '../_services/product.service';
 import { map } from 'rxjs/operators';  
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-show-product-details',
@@ -17,11 +18,12 @@ export class ShowProductDetailsComponent implements OnInit {
 
   productDetails:product[]=[];
 
-  displayedColumns: string[] = ['Product Id', 'Product Name', 'Product Description', 'Product Actual Price','Product Discounted Price','Images','Delete Product'];
+  displayedColumns: string[] = ['Product Id', 'Product Name', 'Product Description', 'Product Actual Price','Product Discounted Price','Images','Edit Product','Delete Product'];
 
   constructor(private productService:ProductService,
     public imagesDialog: MatDialog,
-    private imageProcessingService:ImageProcessingService)
+    private imageProcessingService:ImageProcessingService,
+    private router:Router)
   {
 
   }
@@ -74,6 +76,11 @@ export class ShowProductDetailsComponent implements OnInit {
         height:'500px',
         width:'800px'
       });
+  }
+
+  editProductDetails(productId)
+  {
+    this.router.navigate(['/addNewProduct',{productId:productId}]);
   }
 
 }
